@@ -68,7 +68,7 @@ router.post("/singup", async (req, res) => {
     }
 });
 
-router.post('/singin', async (req,res)=>{
+router.post('/login', async (req,res)=>{
     const { email,password } = req.body;
     const user = await User.find({'email':email});
     
