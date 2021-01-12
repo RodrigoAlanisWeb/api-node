@@ -6,6 +6,8 @@ const path = require('path');
 const User = require('../models/User');
 const verify_token = require('../verify_token');
 
+// Routes
+
 router.use(fileupload({
     useTempFiles : true,
     tempFileDir : path.join(__dirname,'tmp'),
@@ -33,12 +35,9 @@ router.put('/',verify_token,async (req,res)=>{
         useFindAndModify: false
     });
     
-    const user = await User.findById(req.userId);
-
-    if (user) {
+    if (query) {
         return res.json({
             res: true,
-            user
         });
     } else {
         return res.status(500).send({

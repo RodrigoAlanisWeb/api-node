@@ -10,6 +10,9 @@ TaskSchema = new Schema({
     done: {
         type: Boolean,
         default: false
+    },
+    user: {
+        type: Number,
     }
 });
 

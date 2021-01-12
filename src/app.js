@@ -27,6 +27,7 @@ app.get('/',(req,res)=>{
 
 app.use('/api/auth',require('./routes/auth'));
 app.use('/api/users',require('./routes/users'));
+app.use('/api/tasks',require('./routes/tasks'));
 
 // Start the server
 app.listen(app.get('port'),()=>{
