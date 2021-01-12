@@ -4,7 +4,7 @@ const morgan = require('morgan');
 const mongoose = require('mongoose');
 
 // Database
-mongoose.connect('mongodb://localhost:27017/app-js',{
+mongoose.connect('mongodb+srv://Rodrigo:Arkpexps4@ra-task-app.lyypw.mongodb.net/<task-app>?retryWrites=true&w=majority',{
     useNewUrlParser: true,
     useUnifiedTopology: true,
 });
