@@ -31,10 +31,18 @@ router.post("/singup", async (req, res) => {
     const encrypt = await user.encrypt_password(password);
     user.password = encrypt;
 
+    const file = req.files.file;
+
+    file.mv(path.join(__dirname,'../uploads/'+file.name),(err)=>{
+        if (err) {
+            return res.status(500).send({
+                res: false,
+                msg: err
+            })
+        }      
+    });
+
     const query = await user.save();
-
-
-    
 
     if (query){
         const token = await jwt.sign({id: user._id},secret,{
