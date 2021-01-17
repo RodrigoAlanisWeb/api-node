@@ -20,10 +20,6 @@ const UserSchema = new Schema({
         min: 6,
         max: 16
     },
-    image: {
-        type: String,
-        default: 'base.png'
-    }
 });
 
 UserSchema.methods.encrypt_password = async (text)=>{
