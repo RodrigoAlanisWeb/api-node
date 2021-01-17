@@ -93,7 +93,7 @@ router.get('/profile',verify_token,async (req,res,next)=>{
             "name": user.name,
             "username": user.username,
             "email": user.email,
-            "image": user.image,
+            "id": user._id
         }
     });
 })
