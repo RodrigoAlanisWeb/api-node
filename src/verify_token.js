@@ -11,7 +11,7 @@ function verify_token(req,res,next){
     }
 
     const decoded = jwt.verify(token,secret);
-    req.userId = decoded.id;
+    req.userId =  decoded.id;
     next();
 }
 
