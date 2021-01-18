@@ -19,9 +19,9 @@ app.use(express.urlencoded({ extended: false }));
 
 app.use(function (req, res, next) {
     //Enabling CORS
-    res.setheader("Access-Control-Allow-Origin", "*");
-    res.setheader("Access-Control-Allow-Methods", "GET,HEAD,OPTIONS,POST,PUT");
-    res.setheader("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type,Accept, x-client-key, x-client-token, x-client-secret, Authorization,x-access-token")
+    res.header("Access-Control-Allow-Origin", "*");
+    res.header("Access-Control-Allow-Methods", "GET,HEAD,OPTIONS,POST,PUT");
+    res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type,Accept, x-client-key, x-client-token, x-client-secret, Authorization,x-access-token")
     next();
 });
 
