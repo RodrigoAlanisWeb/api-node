@@ -12,8 +12,8 @@ TaskSchema = new Schema({
         default: false
     },
     user: {
-        type: Number,
-    }
+        type: String
+    },
 });
 
 module.exports = model('Task',TaskSchema);
