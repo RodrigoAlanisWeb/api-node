@@ -8,7 +8,7 @@ const verify_token = require('../verify_token');
 
 router.get('/',verify_token,async (req,res)=>{
     tasks = await Task.find({ user: req.userId.toString() });
-
+    console.log(tasks);
     if (tasks) {
         return res.send({
             res: true,
