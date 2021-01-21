@@ -13,12 +13,6 @@ const path = require('path');
 
 // routes
 
-router.use(fileupload({
-    useTempFiles : true,
-    tempFileDir : path.join(__dirname,'tmp'),
-    debug: true
-}));
-
 router.post("/singup", async (req, res) => {
     const { name, username, email, password } = req.body;
     const user = new User({
