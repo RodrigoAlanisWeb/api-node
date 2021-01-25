@@ -63,7 +63,7 @@ router.get('/done/:id',async (req,res)=>{
 })
 
 router.delete('/:id', async (req,res)=>{
-    const query = Task.deleteOne({_id:req.params.id});
+    const query = await Task.deleteOne({_id:req.params.id});
 
     if (query) {
         return res.send({
