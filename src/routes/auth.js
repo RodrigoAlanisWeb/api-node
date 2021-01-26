@@ -51,7 +51,7 @@ router.post('/login', async (req,res)=>{
     const { email,password } = req.body;
     const user = await User.find({'email':email});
     
-    if (user[0]._id){
+    if (user){
         verify = await bcrypt.compare(password,user[0].password);
         if(verify){
             token = jwt.sign({id: user[0]._id},secret,{
