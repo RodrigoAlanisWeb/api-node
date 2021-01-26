@@ -11,14 +11,6 @@ router.put('/',verify_token,async (req,res)=>{
     const { username,name,email } = req.body;
     const file = req.files.file;
 
-    file.mv(path.join(__dirname,'../uploads/'+file.name),(err)=>{
-        if (err) {
-            return res.status(500).send({
-                res: false,
-                msg: err
-            })
-        }      
-    })
     const query = await User.findOneAndUpdate({_id:req.userId},{
         username,
         name,

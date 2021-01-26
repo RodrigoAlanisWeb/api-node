@@ -4,9 +4,11 @@ const morgan = require('morgan');
 const mongoose = require('mongoose');
 
 // Database
-mongoose.connect('mongodb+srv://Rodrigo:Arkpexps4@ra-task-app.lyypw.mongodb.net/<task-app>?retryWrites=true&w=majority', {
+mongoose.connect('mongodb+srv://Rodrigo:Arkpexps4@ra-desktop-app.lyypw.mongodb.net/task-app?retryWrites=true&w=majority', {
     useNewUrlParser: true,
     useUnifiedTopology: true,
+}).catch(err => {
+    console.log(err);
 });
 
 // Settings

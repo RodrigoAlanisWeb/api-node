@@ -44,8 +44,8 @@ router.post('/',verify_token,async (req,res)=>{
     }
 });
 
-router.get('/done/:id',async (req,res)=>{
-    const query = Task.findOneAndUpdate({_id:req.params.id},{
+router.get('/done/:id',verify_token,async (req,res)=>{
+    const query = await Task.findOneAndUpdate({_id:req.params.id},{
         done: true
     },{
         useFindAndModify: false
